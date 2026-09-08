@@ -183,7 +183,7 @@ export default function Services() {
                         size="sm"
                         className="mt-8"
                         whatsappLabel="Ask on WhatsApp"
-                        emailLabel="Send a message"
+                        emailLabel="Send an email"
                         message={`Hello, I would like to learn more about ${service.title.toLowerCase()} services.`}
                       />
                     </div>

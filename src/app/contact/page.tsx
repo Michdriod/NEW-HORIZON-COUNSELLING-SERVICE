@@ -221,7 +221,7 @@ export default function Contact() {
             <Reveal delay={140}>
               <div id="enquiry" className="scroll-mt-28 rounded-[2rem] border border-line bg-surface p-8 md:p-10">
                 <h2 className="display-tight text-[1.65rem] text-ink">
-                  Send a message
+                  Send an email
                 </h2>
                 <p className="mb-8 mt-3 leading-relaxed text-muted">
                   Write a few lines and Gabriel will reply by email, usually

@@ -30,7 +30,7 @@ const base =
 export default function ContactActions({
   message = "Hello New Horizon Counselling Service, I would like to book a counselling session.",
   whatsappLabel = "Book on WhatsApp",
-  emailLabel = "Send a message",
+  emailLabel = "Send an email",
   size = "md",
   tone = "light",
   className = "",

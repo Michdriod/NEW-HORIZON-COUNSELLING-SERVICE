@@ -44,11 +44,20 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: ACCESS_KEY,
-          subject: `Website enquiry from ${name}`,
+          /* Scannable in a phone notification without opening it. */
+          subject: `New enquiry from ${name}`,
           from_name: "New Horizon website",
-          name,
+          /* Makes Reply go straight to the enquirer rather than to Web3Forms. */
+          replyto: email,
+          /* Keys become the labels in the notification email. */
+          Name: name,
+          Email: email,
+          Message: message,
+          Received: new Date().toLocaleString("en-NG", {
+            dateStyle: "full",
+            timeStyle: "short",
+          }),
           email,
-          message,
           botcheck,
         }),
       });
@@ -166,7 +175,7 @@ export default function ContactForm() {
         disabled={status === "sending"}
         className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-ink px-8 py-4 font-semibold text-white shadow-[0_14px_30px_-16px_rgba(12,27,51,0.9)] transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-primary hover:shadow-[0_20px_42px_-16px_rgba(10,53,144,0.75)] active:scale-[0.985] disabled:opacity-60"
       >
-        {status === "sending" ? "Sending…" : ACCESS_KEY ? "Send message" : "Send via WhatsApp"}
+        {status === "sending" ? "Sending…" : ACCESS_KEY ? "Send email" : "Send via WhatsApp"}
         {!ACCESS_KEY && <WhatsAppIcon className="h-5 w-5" />}
       </button>
 
