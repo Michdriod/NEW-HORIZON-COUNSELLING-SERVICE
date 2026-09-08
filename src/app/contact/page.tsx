@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us | New Horizon Counselling Service",
@@ -62,6 +63,32 @@ const channels = [
   },
 ];
 
+if (site.email) {
+  channels.push({
+    label: "Email",
+    value: site.email,
+    href: `mailto:${site.email}`,
+    action: "Send an email",
+    external: false,
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.6}
+        aria-hidden="true"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 8l7.89 4.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"
+        />
+      </svg>
+    ),
+  });
+}
+
 const hours = [
   { day: "Monday to Friday", time: "9:00 AM to 5:00 PM" },
   { day: "Saturday", time: "By appointment" },
@@ -80,7 +107,7 @@ export default function Contact() {
       {/* Channels */}
       <section className="border-y border-line bg-surface">
         <Container>
-          <ul className="grid divide-y divide-line md:grid-cols-3 md:divide-x md:divide-y-0">
+          <ul className="grid divide-y divide-line sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
             {channels.map((channel, i) => (
               <li key={channel.label}>
                 <Reveal delay={i * 90}>

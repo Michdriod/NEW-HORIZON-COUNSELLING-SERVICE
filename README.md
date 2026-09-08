@@ -84,14 +84,14 @@ Testimonials can be added to the Home page:
 
 ### 1. Purchase the Domain
 
-Purchase `newhorizoncounselling.com` from a domain registrar (e.g., Namecheap, GoDaddy, Google Domains).
+Purchase `newhorizonng.com` from a domain registrar (e.g. Namecheap).
 
 ### 2. Connect to Vercel
 
 1. Log in to your Vercel dashboard
 2. Go to your project settings
 3. Click "Domains"
-4. Add `newhorizoncounselling.com`
+4. Add `newhorizonng.com`
 5. Follow the DNS configuration instructions:
    - Add an A record pointing to `76.76.21.21`
    - Add a CNAME record for `www` pointing to `cname.vercel-dns.com`
@@ -106,14 +106,14 @@ Vercel automatically provisions SSL certificates for custom domains.
 
 1. Sign up for Google Workspace
 2. Verify domain ownership
-3. Create `info@newhorizoncounselling.com`
+3. Create `info@newhorizonng.com`
 4. Configure MX records as provided by Google
 
 ### Option 2: Microsoft 365
 
 1. Sign up for Microsoft 365
 2. Verify domain ownership
-3. Create `info@newhorizoncounselling.com`
+3. Create `info@newhorizonng.com`
 4. Configure MX records as provided by Microsoft
 
 ## Project Structure
@@ -157,9 +157,9 @@ src/
 
 ## Launch Checklist
 
-- [ ] Purchase domain `newhorizoncounselling.com`
+- [ ] Purchase domain `newhorizonng.com`
 - [ ] Connect domain to Vercel
-- [ ] Set up email `info@newhorizoncounselling.com`
+- [ ] Set up email `info@newhorizonng.com`
 - [ ] Replace headshot placeholder with real photo
 - [ ] Add testimonials when available
 - [ ] Review and finalize starter articles

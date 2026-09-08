@@ -3,6 +3,7 @@ import { Fraunces, Inter, Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 /* Display: a warm, low-contrast serif. Reads considered and mature in a
@@ -30,10 +31,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title:
-    "New Horizon Counselling Service | Guiding you to a Brighter Tomorrow",
-  description:
-    "Family counselling and mental health practice in Lagos, Nigeria. Marriage counselling, premarital counselling, faith-based counselling, anxiety and depression counselling, addiction recovery counselling, and online counselling. 18 years of experience.",
+  /* Lets Next resolve the social-preview image to an absolute URL, which
+     WhatsApp, Facebook and X all require. */
+  metadataBase: new URL(site.url),
+  title: `${site.name} | ${site.tagline}`,
+  description: site.description,
   keywords: [
     "marriage counselling Lagos",
     "family counselling Nigeria",
@@ -44,6 +46,78 @@ export const metadata: Metadata = {
     "anxiety and depression counselling Lagos",
     "addiction recovery counselling Nigeria",
   ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: `${site.name} | ${site.tagline}`,
+    description: site.description,
+    url: site.url,
+    locale: "en_NG",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | ${site.tagline}`,
+    description: site.description,
+  },
+};
+
+/**
+ * Structured data describing the practice. This is what lets Google show the
+ * address, phone number and opening hours directly in search results.
+ */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  description: site.description,
+  url: site.url,
+  telephone: site.phoneE164,
+  ...(site.email ? { email: site.email } : {}),
+  image: `${site.url}/opengraph-image.jpg`,
+  logo: `${site.url}/icon.png`,
+  foundingDate: String(site.foundedYear),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    addressCountry: site.address.country,
+  },
+  areaServed: [
+    { "@type": "City", name: "Lagos" },
+    { "@type": "Country", name: "Nigeria" },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: site.hours.weekdays.opens,
+      closes: site.hours.weekdays.closes,
+    },
+  ],
+  sameAs: [site.instagram.url],
+  founder: {
+    "@type": "Person",
+    name: "Gabriel Ajibade",
+    jobTitle: "Counsellor and Mental Health Therapist",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Counselling services",
+    itemListElement: [
+      "Marriage Counselling",
+      "Family Counselling",
+      "Premarital Counselling",
+      "Faith-Based Counselling",
+      "Anxiety & Depression Counselling",
+      "Addiction Recovery Counselling",
+      "Online Counselling",
+    ].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -64,6 +138,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html:
               "if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-motion')}",
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body className="flex min-h-full flex-col bg-background">

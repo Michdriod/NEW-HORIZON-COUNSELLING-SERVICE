@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://newhorizoncounselling.com/sitemap.xml",
+    sitemap: "https://newhorizonng.com/sitemap.xml",
   };
 }
