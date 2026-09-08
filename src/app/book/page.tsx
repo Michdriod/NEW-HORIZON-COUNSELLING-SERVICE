@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import Reveal from "@/components/Reveal";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ContactActions from "@/components/ContactActions";
 import { photos } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -79,7 +79,7 @@ export default function Book() {
         lede="Taking the first step towards better mental health and stronger relationships is easier than you think. Here is exactly how it works."
       >
         <div className="mt-9">
-          <WhatsAppButton size="lg" label="Book on WhatsApp" />
+          <ContactActions size="lg" />
         </div>
       </PageHero>
 

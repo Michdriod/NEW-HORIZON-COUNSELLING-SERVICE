@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ContactActions from "@/components/ContactActions";
 import Reveal from "@/components/Reveal";
 import Accordion from "@/components/Accordion";
 import CtaBand from "@/components/CtaBand";
@@ -105,7 +105,7 @@ export default function Home() {
               <Reveal>
                 <p className="eyebrow mb-7 flex items-center gap-3 text-highlight-text">
                   <span className="h-px w-8 bg-current opacity-60" />
-                  Lagos, Nigeria · Since 2008
+                  Lagos, Nigeria · Since 1998
                 </p>
               </Reveal>
 
@@ -129,35 +129,36 @@ export default function Home() {
               <Reveal delay={180}>
                 <p className="mt-8 max-w-xl text-[length:var(--text-lede)] leading-relaxed text-muted text-pretty">
                   Counselling for individuals, couples, and families. Held with
-                  eighteen years of practice, complete confidentiality, and a
+                  twenty-eight years of practice, complete confidentiality, and a
                   pace that belongs to you.
                 </p>
               </Reveal>
 
               <Reveal delay={260}>
-                <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <WhatsAppButton size="lg" label="Book a session" />
-                  <Link
-                    href="/services"
-                    className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-ink/15 px-8 py-4 text-[1.02rem] font-semibold text-ink transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-ink/40 hover:bg-white"
+                <ContactActions size="lg" whatsappLabel="Book a session" className="mt-10" />
+              </Reveal>
+
+              <Reveal delay={300}>
+                <Link
+                  href="/services"
+                  className="link-underline mt-7 inline-flex py-2 text-[0.95rem] font-semibold text-primary"
+                >
+                  Explore our services
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden="true"
                   >
-                    Explore services
-                    <svg
-                      className="h-4 w-4 transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 12h13m0 0-5-5m5 5-5 5"
-                      />
-                    </svg>
-                  </Link>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h13m0 0-5-5m5 5-5 5"
+                    />
+                  </svg>
+                </Link>
               </Reveal>
 
               <Reveal delay={340}>
@@ -396,10 +397,10 @@ export default function Home() {
 
           <Reveal delay={340}>
             <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <WhatsAppButton
+              <ContactActions
                 size="lg"
-                variant="onDark"
-                label="Start on WhatsApp"
+                tone="onDark"
+                whatsappLabel="Start on WhatsApp"
                 message="Hello, I would like to schedule a free intro call."
               />
               <Link
@@ -457,7 +458,7 @@ export default function Home() {
                 <p className="mt-8 max-w-2xl leading-relaxed text-muted text-pretty">
                   Gabriel is a pastor, certified counsellor, mental health
                   therapist, marriage and family life counsellor, mentor, and
-                  counselling educator with eighteen years of experience walking
+                  counselling educator with twenty-eight years of experience walking
                   alongside people through the hardest conversations of their
                   lives.
                 </p>

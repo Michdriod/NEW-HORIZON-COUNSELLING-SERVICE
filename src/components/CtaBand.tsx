@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import Container from "./Container";
-import WhatsAppButton from "./WhatsAppButton";
+import ContactActions from "./ContactActions";
 
 interface CtaBandProps {
   title: string;
@@ -37,10 +37,10 @@ export default function CtaBand({
             </Reveal>
           </div>
           <Reveal delay={200}>
-            <WhatsAppButton
-              variant="onDark"
+            <ContactActions
+              tone="onDark"
               size="lg"
-              label={label}
+              whatsappLabel={label}
               message={message}
             />
           </Reveal>

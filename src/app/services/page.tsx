@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ContactActions from "@/components/ContactActions";
 import { photos } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -179,11 +179,11 @@ export default function Services() {
                         {service.whatToExpect}
                       </p>
 
-                      <WhatsAppButton
+                      <ContactActions
                         size="sm"
-                        variant="secondary"
-                        label="Enquire about this"
                         className="mt-8"
+                        whatsappLabel="Ask on WhatsApp"
+                        emailLabel="Send a message"
                         message={`Hello, I would like to learn more about ${service.title.toLowerCase()} services.`}
                       />
                     </div>

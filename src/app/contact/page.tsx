@@ -219,13 +219,14 @@ export default function Contact() {
             </div>
 
             <Reveal delay={140}>
-              <div className="rounded-[2rem] border border-line bg-surface p-8 md:p-10">
+              <div id="enquiry" className="scroll-mt-28 rounded-[2rem] border border-line bg-surface p-8 md:p-10">
                 <h2 className="display-tight text-[1.65rem] text-ink">
                   Send a message
                 </h2>
                 <p className="mb-8 mt-3 leading-relaxed text-muted">
-                  Write a few lines and we&apos;ll continue the conversation on
-                  WhatsApp.
+                  Write a few lines and Gabriel will reply by email, usually
+                  within one working day. Prefer to talk sooner? Message us on
+                  WhatsApp instead.
                 </p>
                 <ContactForm />
               </div>

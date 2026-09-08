@@ -42,8 +42,8 @@ export const site = {
     note: "Saturday by appointment. Sunday closed.",
   },
 
-  foundedYear: 2008,
-  yearsOfExperience: 18,
+  foundedYear: 1998,
+  yearsOfExperience: 28,
 } as const;
 
 /** Builds a WhatsApp deep link with a prefilled message. */

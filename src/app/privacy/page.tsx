@@ -42,7 +42,37 @@ export default function Privacy() {
             </ul>
 
             <h2>
-              2. How We Use Your Information
+              2. How the Enquiry Form Works
+            </h2>
+            <p>
+              The enquiry form on our Contact page is delivered by{" "}
+              <a
+                href="https://web3forms.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Web3Forms
+              </a>
+              , a third-party service. When you submit the form, the name,
+              email address, and message you enter pass through Web3Forms&rsquo;
+              servers, which forward them to our practice inbox. Web3Forms does
+              not retain the content of your message after it has been
+              delivered, and this website itself does not store your
+              submission.
+            </p>
+            <p>
+              <strong>
+                Because your message travels through a third party, please do
+                not use the form to share sensitive personal details.
+              </strong>{" "}
+              Simply let us know that you would like to talk, and we will
+              arrange a private session where such matters can be discussed
+              confidentially. Messages sent to us on WhatsApp are handled by
+              WhatsApp under their own privacy terms.
+            </p>
+
+            <h2>
+              3. How We Use Your Information
             </h2>
             <p>
               We use the information you provide solely to:
@@ -54,7 +84,7 @@ export default function Privacy() {
             </ul>
 
             <h2>
-              3. Confidentiality
+              4. Confidentiality
             </h2>
             <p>
               All information shared during counselling sessions is kept strictly
@@ -64,7 +94,7 @@ export default function Privacy() {
             </p>
 
             <h2>
-              4. Data Protection
+              5. Data Protection
             </h2>
             <p>
               We take appropriate measures to protect your personal information
@@ -73,7 +103,7 @@ export default function Privacy() {
             </p>
 
             <h2>
-              5. Third-Party Services
+              6. Third-Party Services
             </h2>
             <p>
               Our website uses WhatsApp for communication. When you click on
@@ -82,7 +112,7 @@ export default function Privacy() {
             </p>
 
             <h2>
-              6. Cookies & Analytics
+              7. Cookies & Analytics
             </h2>
             <p>
               Our website may use basic analytics to understand how visitors
@@ -92,7 +122,7 @@ export default function Privacy() {
             </p>
 
             <h2>
-              7. Your Rights
+              8. Your Rights
             </h2>
             <p>
               You have the right to:
@@ -104,7 +134,7 @@ export default function Privacy() {
             </ul>
 
             <h2>
-              8. Contact Us
+              9. Contact Us
             </h2>
             <p>
               If you have any questions about this privacy policy or how we
