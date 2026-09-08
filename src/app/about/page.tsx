@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "About Gabriel Ajibade | New Horizon Counselling Service",
   description:
-    "Meet Gabriel Ajibade, a pastor, certified counsellor, and Mental Health Therapist with 18 years of experience in marriage counselling, family counselling, and faith-based counselling in Lagos, Nigeria.",
+    "Meet Gabriel Ajibade, a pastor, certified counsellor, and Mental Health Therapist with 28 years of experience in marriage counselling, family counselling, and faith-based counselling in Lagos, Nigeria.",
   keywords: [
     "mental health counsellor Ikeja",
     "Christian counselling Nigeria",

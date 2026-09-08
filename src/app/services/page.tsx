@@ -10,7 +10,7 @@ import { photos } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Our Services | New Horizon Counselling Service",
   description:
-    "Professional counselling services in Lagos, Nigeria: marriage counselling, family counselling, premarital counselling, faith-based counselling, anxiety and depression counselling, addiction recovery counselling, and online counselling. 60-minute sessions with 18 years of experience.",
+    "Professional counselling services in Lagos, Nigeria: marriage counselling, family counselling, premarital counselling, faith-based counselling, anxiety and depression counselling, addiction recovery counselling, and online counselling. 60-minute sessions with 28 years of experience.",
   keywords: [
     "marriage counselling Lagos",
     "family counselling Nigeria",
