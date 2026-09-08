@@ -25,7 +25,7 @@ const services = [
   {
     title: "Premarital Counselling",
     summary:
-      "Have the honest conversations — money, family, roles, faith — before you say ‘I do’.",
+      "Have the honest conversations about money, family, roles, and faith before you say ‘I do’.",
     for: "Engaged couples",
   },
   {
@@ -33,6 +33,18 @@ const services = [
     summary:
       "Professional therapeutic work that respectfully holds your faith alongside it.",
     for: "Where clients desire it",
+  },
+  {
+    title: "Anxiety & Depression Counselling",
+    summary:
+      "Regain emotional stability and self-awareness, and take practical steps toward recovery.",
+    for: "When it affects daily life",
+  },
+  {
+    title: "Addiction Recovery Counselling",
+    summary:
+      "Identify the triggers and roots behind harmful patterns, and build strategies that prevent relapse.",
+    for: "Substances, habits, behaviours",
   },
   {
     title: "Online Counselling",
@@ -45,7 +57,7 @@ const services = [
 const steps = [
   {
     title: "Reach out",
-    body: "Send a message on WhatsApp. Gabriel replies personally — no forms, no waiting rooms.",
+    body: "Send a message on WhatsApp. Gabriel replies personally. No forms, no waiting rooms.",
   },
   {
     title: "A free intro call",
@@ -79,7 +91,7 @@ const credentials = [
   "Certified counsellor & Mental Health Therapist",
   "Marriage and family life counsellor",
   "Counselling educator and mentor",
-  "Pastor — faith-sensitive where desired",
+  "Pastor, faith-sensitive where desired",
 ];
 
 export default function Home() {
@@ -116,7 +128,7 @@ export default function Home() {
 
               <Reveal delay={180}>
                 <p className="mt-8 max-w-xl text-[length:var(--text-lede)] leading-relaxed text-muted text-pretty">
-                  Counselling for individuals, couples, and families — held with
+                  Counselling for individuals, couples, and families. Held with
                   eighteen years of practice, complete confidentiality, and a
                   pace that belongs to you.
                 </p>
@@ -184,7 +196,7 @@ export default function Home() {
                     </p>
                   </div>
                   <p className="font-display text-[2.25rem] leading-none text-highlight">
-                    18
+                    28
                     <span className="ml-1 align-super font-body text-[0.7rem] font-semibold uppercase tracking-widest text-muted">
                       yrs
                     </span>
@@ -237,7 +249,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Who we work with"
             title="Individuals, couples, and families."
-            subtitle="Whoever walks in, the work starts the same way — with listening."
+            subtitle="Whoever walks in, the work starts the same way: by listening."
             centered={false}
           />
 
@@ -282,7 +294,7 @@ export default function Home() {
         <Container>
           <SectionHeading
             eyebrow="What we offer"
-            title="Five ways we can work together"
+            title="Seven ways we can work together"
             subtitle="Every service runs as a 60-minute session, online or in person, and begins with a free introductory call."
             centered={false}
           />
@@ -436,7 +448,7 @@ export default function Home() {
               <Reveal delay={120}>
                 <p className="font-display text-[length:var(--text-h3)] leading-[1.45] text-ink-soft text-pretty">
                   &ldquo;My approach is warm, ethical, practical, and
-                  integrative — drawing on sound counselling principles, and
+                  integrative, drawing on sound counselling principles and
                   respectfully holding Christian values where a client wants a
                   faith-based process.&rdquo;
                 </p>

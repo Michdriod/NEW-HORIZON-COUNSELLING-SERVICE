@@ -63,7 +63,7 @@ const channels = [
 ];
 
 const hours = [
-  { day: "Monday – Friday", time: "9:00 AM – 5:00 PM" },
+  { day: "Monday to Friday", time: "9:00 AM to 5:00 PM" },
   { day: "Saturday", time: "By appointment" },
   { day: "Sunday", time: "Closed" },
 ];

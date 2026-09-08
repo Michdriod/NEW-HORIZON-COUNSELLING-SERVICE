@@ -10,13 +10,15 @@ import { photos } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Our Services | New Horizon Counselling Service",
   description:
-    "Professional counselling services in Lagos, Nigeria: marriage counselling, family counselling, premarital counselling, faith-based counselling, and online counselling. 60-minute sessions with 18 years of experience.",
+    "Professional counselling services in Lagos, Nigeria: marriage counselling, family counselling, premarital counselling, faith-based counselling, anxiety and depression counselling, addiction recovery counselling, and online counselling. 60-minute sessions with 18 years of experience.",
   keywords: [
     "marriage counselling Lagos",
     "family counselling Nigeria",
     "premarital counselling Lagos",
     "online counselling Nigeria",
     "Christian counselling Nigeria",
+    "anxiety and depression counselling Lagos",
+    "addiction recovery counselling Nigeria",
   ],
 };
 
@@ -54,6 +56,22 @@ const services = [
       "Faith-based counselling integrates professional counselling principles with Christian values and spiritual insights. Gabriel respectfully incorporates faith into the therapeutic process for those who desire it. This approach is available for all services and can be conducted online or in person.",
   },
   {
+    title: "Anxiety & Depression Counselling",
+    photo: photos.anxietyDepression,
+    whoFor:
+      "For individuals whose thoughts, emotions, relationships, work, sleep, faith, or daily functioning are being affected by anxiety or depression.",
+    whatToExpect:
+      "Our counselling service provides a safe, confidential, and supportive space where clients can explore what they are experiencing. The goal is to help clients regain emotional stability, improve self-awareness, strengthen resilience, and take practical steps toward recovery. Where symptoms are severe or require medical attention, we also support appropriate referral to qualified healthcare professionals.",
+  },
+  {
+    title: "Addiction Recovery Counselling",
+    photo: photos.addictionRecovery,
+    whoFor:
+      "For individuals seeking freedom from substances, habits, or behaviours that have begun to control their choices, relationships, health, finances, work, or spiritual wellbeing.",
+    whatToExpect:
+      "Our addiction recovery counselling provides structured, compassionate, and non-judgmental support for individuals seeking freedom from harmful patterns. We help clients identify triggers and the roots of addiction, and build relapse-prevention strategies. Where specialist medical, psychiatric, or rehabilitation support is needed, we work with the client to pursue appropriate referral and coordinated care.",
+  },
+  {
     title: "Online Counselling",
     photo: photos.online,
     whoFor:
@@ -75,13 +93,22 @@ const sessionFacts = [
   },
 ];
 
+/** URL-safe anchor for each service section. */
+function slugify(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export default function Services() {
   return (
     <>
       <PageHero
         eyebrow="What we offer"
         title="Counselling shaped around your situation."
-        lede="Five services, one standard of care. Every session runs 60 minutes and is available online or in person, and each begins with a free introductory call."
+        lede="Seven services, one standard of care. Every session runs 60 minutes and is available online or in person, and each begins with a free introductory call."
       />
 
       {/* Session facts */}
@@ -113,12 +140,12 @@ export default function Services() {
             {services.map((service, i) => (
               <Reveal key={service.title} delay={i * 70}>
                 <article
-                  id={service.title.toLowerCase().replace(/\s+/g, "-")}
+                  id={slugify(service.title)}
                   className="scroll-mt-28 bg-surface p-8 md:p-12"
                 >
                   <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
                     {/* Alternate which side the photograph sits on so the
-                        five sections do not read as one repeated block. */}
+                        sections do not read as one repeated block. */}
                     <div
                       className={`overflow-hidden rounded-[1.5rem] ${
                         i % 2 === 1 ? "lg:order-2" : ""

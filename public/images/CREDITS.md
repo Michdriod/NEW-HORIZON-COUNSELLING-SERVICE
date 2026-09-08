@@ -14,6 +14,8 @@ with the practice's own photography later.
 | `family-counselling.jpg` | https://www.pexels.com/photo/7114420/ |
 | `premarital-counselling.jpg` | https://www.pexels.com/photo/5699521/ |
 | `faith-based-counselling.jpg` | https://www.pexels.com/photo/7220101/ |
+| `anxiety-depression-counselling.jpg` | https://www.pexels.com/photo/7579178/ |
+| `addiction-recovery-counselling.jpg` | https://www.pexels.com/photo/1198171/ |
 | `online-counselling.jpg` | https://www.pexels.com/photo/6496113/ |
 | `counselling-session.jpg` | https://www.pexels.com/photo/5699424/ |
 | `couples.jpg` | https://www.pexels.com/photo/5711601/ |

@@ -40,6 +40,14 @@ export const photos = {
     "faith-based-counselling",
     "A man sitting alone in a church pew with his hands clasped and head bowed"
   ),
+  anxietyDepression: photo(
+    "anxiety-depression-counselling",
+    "A man speaking openly with a counsellor during a one-to-one session"
+  ),
+  addictionRecovery: photo(
+    "addiction-recovery-counselling",
+    "Several people stacking their hands together in a gesture of mutual support"
+  ),
   online: photo(
     "online-counselling",
     "A woman wearing headphones, relaxed on a sofa at home during a video session on her laptop"

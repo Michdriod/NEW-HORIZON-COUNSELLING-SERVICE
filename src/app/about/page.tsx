@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "About Gabriel Ajibade | New Horizon Counselling Service",
   description:
-    "Meet Gabriel Ajibade — pastor, certified counsellor, Mental Health Therapist with 18 years of experience in marriage counselling, family counselling, and faith-based counselling in Lagos, Nigeria.",
+    "Meet Gabriel Ajibade, a pastor, certified counsellor, and Mental Health Therapist with 18 years of experience in marriage counselling, family counselling, and faith-based counselling in Lagos, Nigeria.",
   keywords: [
     "mental health counsellor Ikeja",
     "Christian counselling Nigeria",
@@ -107,7 +107,7 @@ export default function About() {
                 </div>
                 <div className="mt-6 flex items-baseline gap-4">
                   <span className="font-display text-[3.5rem] leading-none text-highlight">
-                    18
+                    28
                   </span>
                   <p className="text-[0.95rem] leading-snug text-muted">
                     years of counselling
@@ -138,7 +138,7 @@ export default function About() {
                 <blockquote className="mt-12 border-l-2 border-highlight pl-7">
                   <p className="font-display text-[length:var(--text-h3)] leading-[1.45] text-ink text-pretty">
                     &ldquo;My approach is warm, ethical, practical, and
-                    integrative — drawing from sound counselling principles
+                    integrative, drawing from sound counselling principles
                     while respectfully incorporating Christian values where
                     clients desire a faith-based process.&rdquo;
                   </p>
@@ -199,7 +199,7 @@ export default function About() {
           <Reveal delay={110}>
             <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-muted text-pretty">
               Sessions run for 60 minutes, online via Google Meet or in person
-              at the Ikeja office — whichever lets you speak most freely.
+              at the Ikeja office, whichever lets you speak most freely.
             </p>
           </Reveal>
         </Container>

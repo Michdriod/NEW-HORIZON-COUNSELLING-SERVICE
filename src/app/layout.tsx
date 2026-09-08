@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   title:
     "New Horizon Counselling Service | Guiding you to a Brighter Tomorrow",
   description:
-    "Family counselling and mental health practice in Lagos, Nigeria. Marriage counselling, premarital counselling, faith-based counselling, and online counselling. 18 years of experience.",
+    "Family counselling and mental health practice in Lagos, Nigeria. Marriage counselling, premarital counselling, faith-based counselling, anxiety and depression counselling, addiction recovery counselling, and online counselling. 18 years of experience.",
   keywords: [
     "marriage counselling Lagos",
     "family counselling Nigeria",
@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     "online counselling Nigeria",
     "Christian counselling Nigeria",
     "mental health counsellor Ikeja",
+    "anxiety and depression counselling Lagos",
+    "addiction recovery counselling Nigeria",
   ],
 };
 
