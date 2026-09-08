@@ -185,7 +185,7 @@ export default function Book() {
 
       <CtaBand
         title="Ready to get started?"
-        body="Send us a message on WhatsApp and we’ll guide you through the next steps."
+        body="Send us a message and we’ll guide you through the next steps."
       />
     </>
   );

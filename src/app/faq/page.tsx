@@ -116,7 +116,7 @@ export default function FAQ() {
 
       <CtaBand
         title="Still have questions?"
-        body="We’re happy to answer anything else you may have. Reach out on WhatsApp and we’ll get back to you promptly."
+        body="We’re happy to answer anything else you may have. Reach out however suits you best and we’ll get back to you promptly."
         message="Hello, I have a question about your counselling services."
         label="Ask on WhatsApp"
       />

@@ -144,7 +144,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="flex min-h-full flex-col bg-background">
+      {/* Extensions such as Grammarly add attributes to <body> before React
+          hydrates, which would otherwise be reported as a mismatch. */}
+      <body
+        suppressHydrationWarning
+        className="flex min-h-full flex-col bg-background"
+      >
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

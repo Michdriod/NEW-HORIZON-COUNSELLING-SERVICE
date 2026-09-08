@@ -170,13 +170,34 @@ export default function ContactForm() {
         {!ACCESS_KEY && <WhatsAppIcon className="h-5 w-5" />}
       </button>
 
-      {/* Kept deliberately prominent: this form is not a confidential channel. */}
-      <p className="text-[0.85rem] leading-relaxed text-muted-light">
-        Please don&apos;t share sensitive personal details here. Just let us
-        know you&apos;d like to talk and we&apos;ll arrange a private session.
-        Your message reaches {site.email ?? "us"} and is not stored on this
-        website.
-      </p>
+      {/* This form is not a confidential channel, so the caveat is given
+          the weight of a notice rather than buried as fine print. */}
+      <div className="flex gap-3.5 rounded-2xl border border-line bg-sand p-5">
+        <svg
+          className="mt-0.5 h-5 w-5 shrink-0 text-highlight-text"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.6}
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3l7.5 3.5v5c0 4.5-3.1 8.2-7.5 9.5-4.4-1.3-7.5-5-7.5-9.5v-5L12 3Z"
+          />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9.5v3.5M12 16h.01" />
+        </svg>
+        <p className="text-[0.875rem] leading-relaxed text-body">
+          <strong className="font-semibold text-ink">
+            Please keep this message brief.
+          </strong>{" "}
+          Simply let us know you&apos;d like to talk and we&apos;ll arrange a
+          private session where anything personal can be discussed
+          confidentially. Your message is delivered to{" "}
+          {site.email ?? "us"} and is not stored on this website.
+        </p>
+      </div>
     </form>
   );
 }

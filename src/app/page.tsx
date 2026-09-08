@@ -139,9 +139,15 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={300}>
+                <p className="mt-5 text-[0.9rem] font-semibold text-muted">
+                  Free 15-minute intro call
+                </p>
+              </Reveal>
+
+              <Reveal delay={340}>
                 <Link
                   href="/services"
-                  className="link-underline mt-7 inline-flex py-2 text-[0.95rem] font-semibold text-primary"
+                  className="link-underline mt-8 inline-flex py-2 text-[0.95rem] font-semibold text-primary"
                 >
                   Explore our services
                   <svg
@@ -161,11 +167,6 @@ export default function Home() {
                 </Link>
               </Reveal>
 
-              <Reveal delay={340}>
-                <p className="mt-8 text-[0.9rem] font-semibold text-muted">
-                  Free 15-minute intro call
-                </p>
-              </Reveal>
             </div>
 
             {/* Portrait */}

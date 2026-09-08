@@ -205,7 +205,7 @@ export default function Services() {
 
       <CtaBand
         title="Ready to book your session?"
-        body="Take the first step towards better mental health and stronger relationships. Book your session on WhatsApp today."
+        body="Take the first step towards better mental health and stronger relationships. Book your session today."
         message="Hello, I would like to book a counselling session."
       />
     </>
