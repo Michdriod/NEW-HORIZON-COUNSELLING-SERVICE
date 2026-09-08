@@ -1,0 +1,346 @@
+@import "tailwindcss";
+
+/* ============================================================
+   NEW HORIZON — DESIGN SYSTEM
+   Warm sand canvas · deep ink navy · restrained gold.
+   The logo hues are preserved; what changes is how much
+   surface area each one is allowed to occupy.
+   ============================================================ */
+
+@theme {
+  /* --- Type --- */
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-wordmark: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-fraunces), Georgia, serif; /* legacy alias */
+
+  /* --- Ink --- */
+  --color-ink: #0C1B33;
+  --color-ink-soft: #26374F;
+  --color-body: #333F4F;
+  --color-muted: #5F6B7A;
+  --color-muted-light: #647386;   /* 4.6:1 on sand — this carries real copy */
+  --color-text: #1A2230;
+
+  /* --- Brand --- */
+  --color-primary: #0A3590;
+  --color-primary-light: #1547AD;
+  --color-primary-dark: #071F5C;
+  --color-accent: #0F7FA6;
+  --color-accent-dark: #0A6485;
+  --color-accent-bright: #00BCEB;
+  --color-highlight: #C57F2E;      /* decorative / large text only — 3.1:1 */
+  --color-highlight-text: #9D6525; /* 4.6:1 on sand — for eyebrows and labels */
+  --color-highlight-light: #E3A45C;
+  --color-highlight-soft: #EFC894;
+
+  /* --- Ground --- */
+  --color-background: #FBF8F4;
+  --color-sand: #F5EFE7;
+  --color-sand-deep: #EDE4D8;
+  --color-surface: #FFFFFF;
+  --color-line: #E8E0D5;
+  --color-line-strong: #D9CEBF;
+  --color-field-border: #A98F6D;  /* 3.1:1 on white — form controls need a
+                                     perceivable boundary (WCAG 1.4.11) */
+
+  /* --- Motion --- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* --- Fluid type scale --- */
+  --text-eyebrow: 0.75rem;
+  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 5.25rem);
+  --text-h1: clamp(2.25rem, 1.4rem + 3.2vw, 3.75rem);
+  --text-h2: clamp(1.9rem, 1.35rem + 2.1vw, 3rem);
+  --text-h3: clamp(1.3rem, 1.1rem + 0.7vw, 1.6rem);
+  --text-lede: clamp(1.075rem, 1rem + 0.45vw, 1.3rem);
+}
+
+/* ============================================================
+   BASE — inside @layer so Tailwind utilities always win.
+   (The previous stylesheet declared h1–h6 colour unlayered,
+   which silently overrode `text-white` on dark sections.)
+   ============================================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-body);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-variation-settings: "SOFT" 20, "WONK" 0;
+  }
+
+  h4, h5, h6 { line-height: 1.25; letter-spacing: -0.01em; }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::selection {
+    background: var(--color-highlight-soft);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+@utility font-display { font-family: var(--font-display); }
+@utility font-body { font-family: var(--font-body); }
+@utility font-wordmark { font-family: var(--font-wordmark); }
+
+/* Eyebrow / kicker label */
+@utility eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Optical refinements for the serif display face */
+@utility display-tight {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  font-variation-settings: "SOFT" 30, "WONK" 1;
+}
+
+@utility text-balance { text-wrap: balance; }
+@utility text-pretty { text-wrap: pretty; }
+
+/* ============================================================
+   SURFACE TREATMENTS
+   ============================================================ */
+
+/* Deep navy field with a soft sky bloom — replaces the old
+   flat blue→cyan gradient that dominated every dark section. */
+.field-deep {
+  position: relative;
+  background-color: #071733;
+  background-image:
+    radial-gradient(120% 100% at 12% 0%, rgba(0, 188, 235, 0.22) 0%, transparent 55%),
+    radial-gradient(90% 90% at 92% 12%, rgba(197, 127, 46, 0.16) 0%, transparent 60%),
+    radial-gradient(140% 120% at 50% 120%, rgba(10, 53, 144, 0.55) 0%, transparent 70%);
+  isolation: isolate;
+}
+
+.field-sand {
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(80% 60% at 85% -10%, rgba(15, 127, 166, 0.06) 0%, transparent 60%),
+    radial-gradient(70% 60% at 0% 100%, rgba(197, 127, 46, 0.06) 0%, transparent 60%);
+}
+
+/* Fine paper grain — keeps large flat areas from looking plastic */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E");
+}
+
+/* Hairline horizon rule, echoing the logo mark */
+.rule-horizon {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-line-strong) 18%,
+    var(--color-highlight) 50%,
+    var(--color-line-strong) 82%,
+    transparent
+  );
+}
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+
+/* The hidden state is applied only once JS has confirmed it can run and
+   the visitor has not asked for reduced motion. Without this gate a
+   scripting failure would leave every revealed section at opacity 0. */
+.js-motion [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.75s var(--ease-out-soft),
+    transform 0.75s var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js-motion [data-reveal="fade"] { transform: none; }
+.js-motion [data-reveal="left"] { transform: translate3d(-26px, 0, 0); }
+.js-motion [data-reveal="right"] { transform: translate3d(26px, 0, 0); }
+.js-motion [data-reveal="scale"] { transform: scale(0.96); }
+
+.js-motion [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Animated link underline */
+.link-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--ease-out-soft);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Card lift */
+.lift {
+  transition:
+    transform 0.5s var(--ease-out-soft),
+    box-shadow 0.5s var(--ease-out-soft),
+    border-color 0.5s var(--ease-out-soft);
+}
+
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -20px rgba(12, 27, 51, 0.22);
+}
+
+/* Slow ambient drift for decorative bloom shapes */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -18px, 0) scale(1.04); }
+}
+
+.animate-drift { animation: drift 14s var(--ease-in-out-soft) infinite; }
+
+/* Breathing halo on the floating action button */
+@keyframes halo {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.42); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-halo { animation: halo 3.2s var(--ease-out-soft) infinite; }
+
+/* Mobile nav drawer */
+@keyframes drawer-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-drawer { animation: drawer-in 0.4s var(--ease-out-soft) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   CHROME
+   ============================================================ */
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--color-ink);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 0.3s var(--ease-out-soft);
+}
+
+.skip-link:focus-visible { transform: translateY(0); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-sand); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 999px;
+  border: 2px solid var(--color-sand);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted-light); }
+
+/* Long-form article typography */
+.prose-nh { max-width: 68ch; }
+
+/* Standfirst: lift the opening paragraph so the article has an entry point. */
+.prose-nh--lede > p:first-child {
+  font-size: var(--text-lede);
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.6em;
+}
+.prose-nh p { margin-bottom: 1.35em; color: var(--color-body); }
+.prose-nh h2 { font-size: var(--text-h2); margin: 2.25em 0 0.65em; }
+.prose-nh h3 { font-size: var(--text-h3); margin: 1.9em 0 0.5em; }
+.prose-nh ul, .prose-nh ol { margin: 0 0 1.35em 1.15em; }
+.prose-nh li { margin-bottom: 0.5em; }
+.prose-nh ul { list-style: disc; }
+.prose-nh ol { list-style: decimal; }
+.prose-nh strong { color: var(--color-ink); font-weight: 600; }
+.prose-nh a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
