@@ -57,7 +57,6 @@ export default function ContactForm() {
             dateStyle: "full",
             timeStyle: "short",
           }),
-          email,
           botcheck,
         }),
       });
@@ -79,17 +78,19 @@ export default function ContactForm() {
         role="status"
         className="rounded-2xl border border-line bg-sand p-7 text-center"
       >
-        <p className="font-display text-[1.35rem] text-ink">Message sent</p>
+        <p className="font-display text-[1.35rem] text-ink">
+          Thank you for reaching out
+        </p>
         <p className="mt-3 leading-relaxed text-muted">
-          Thank you for reaching out. Gabriel will reply to you personally,
-          usually within one working day.
+          Your message has been received. We will respond by email within one
+          working day. If the matter is urgent, please contact us on WhatsApp.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
           className="link-underline mt-5 inline-flex py-2 text-[0.9rem] font-semibold text-primary"
         >
-          Send another message
+          Send another email
         </button>
       </div>
     );

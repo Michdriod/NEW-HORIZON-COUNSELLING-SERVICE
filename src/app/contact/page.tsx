@@ -224,9 +224,9 @@ export default function Contact() {
                   Send an email
                 </h2>
                 <p className="mb-8 mt-3 leading-relaxed text-muted">
-                  Write a few lines and Gabriel will reply by email, usually
-                  within one working day. Prefer to talk sooner? Message us on
-                  WhatsApp instead.
+                  Share a few lines about what you are looking for and we
+                  will respond by email within one working day. If you would
+                  prefer to speak sooner, please contact us on WhatsApp.
                 </p>
                 <ContactForm />
               </div>
