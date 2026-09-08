@@ -49,7 +49,7 @@ const groups = [
       {
         question: "How do I book a session?",
         answer:
-          "Booking is simple , send us a message on WhatsApp and we’ll guide you through the process. You can also visit our Book a Session page for more details.",
+          "Booking is simple — send us a message on WhatsApp and we’ll guide you through the process. You can also visit our Book a Session page for more details.",
       },
       {
         question: "What is your cancellation policy?",

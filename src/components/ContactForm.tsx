@@ -8,7 +8,7 @@ const fieldStyles =
 
 /**
  * Composes the enquiry into a WhatsApp message rather than posting it
- * anywhere , there is no backend, and nothing a visitor types is stored
+ * anywhere — there is no backend, and nothing a visitor types is stored
  * or transmitted until they choose to send it themselves.
  */
 export default function ContactForm() {

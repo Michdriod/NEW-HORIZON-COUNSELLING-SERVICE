@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "About Gabriel Ajibade | New Horizon Counselling Service",
   description:
-    "Meet Gabriel Ajibade , pastor, certified counsellor, mental health therapist with 18 years of experience in marriage counselling, family counselling, and faith-based counselling in Lagos, Nigeria.",
+    "Meet Gabriel Ajibade — pastor, certified counsellor, Mental Health Therapist with 18 years of experience in marriage counselling, family counselling, and faith-based counselling in Lagos, Nigeria.",
   keywords: [
     "mental health counsellor Ikeja",
     "Christian counselling Nigeria",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const profile = [
-  "Gabriel Ajibade is a pastor, certified counsellor, mental health therapist, marriage and family life counsellor, mentor, and counselling educator. He brings together pastoral wisdom, professional counselling training, and years of practical experience in supporting individuals, couples, families, leaders, and faith communities.",
+  "Gabriel Ajibade is a pastor, certified counsellor, Mental Health Therapist, marriage and family life counsellor, mentor, and counselling educator. He brings together pastoral wisdom, professional counselling training, and years of practical experience in supporting individuals, couples, families, leaders, and faith communities.",
   "He holds a Master’s degree in Theology with specialization in Leadership, a Master’s degree in Mental Health Counselling, and an Advanced Diploma in Marriage Counselling, and has received professional training in family counselling, cognitive behavioural therapy, psychotherapy, marriage counselling, mentoring, and pastoral care. He is also actively involved in counselling education and supervision, helping to train and guide emerging counsellors in ethical and competent practice.",
   "His professional memberships include the Counselling Association of Nigeria and the Africa Network of Professional Counsellors. He has also served in leadership, academic, supervisory, and mentoring capacities within counselling, ministry, and training institutions.",
 ];
@@ -85,7 +85,7 @@ export default function About() {
       <PageHero
         eyebrow="Meet your counsellor"
         title="Gabriel Ajibade"
-        lede="Pastor, certified counsellor, mental health therapist, marriage and family life counsellor, mentor, and counselling educator."
+        lede="Pastor, certified counsellor, Mental Health Therapist, marriage and family life counsellor, mentor, and counselling educator."
       />
 
       {/* Portrait + profile */}
@@ -96,13 +96,13 @@ export default function About() {
               <div className="lg:sticky lg:top-32">
                 <div className="overflow-hidden rounded-[2.5rem] border border-line shadow-[0_40px_80px_-44px_rgba(12,27,51,0.4)]">
                   <Image
-                    src="/gabriel.png"
+                    src="/gabriel-portrait.jpg"
                     alt="Gabriel Ajibade, counsellor at New Horizon Counselling Service"
-                    width={1600}
+                    width={1050}
                     height={900}
                     priority
                     sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="h-[24rem] w-full object-cover object-[center_28%] md:h-[32rem]"
+                    className="h-[24rem] w-full object-cover object-center md:h-[32rem]"
                   />
                 </div>
                 <div className="mt-6 flex items-baseline gap-4">
@@ -138,7 +138,7 @@ export default function About() {
                 <blockquote className="mt-12 border-l-2 border-highlight pl-7">
                   <p className="font-display text-[length:var(--text-h3)] leading-[1.45] text-ink text-pretty">
                     &ldquo;My approach is warm, ethical, practical, and
-                    integrative , drawing from sound counselling principles
+                    integrative — drawing from sound counselling principles
                     while respectfully incorporating Christian values where
                     clients desire a faith-based process.&rdquo;
                   </p>
@@ -199,7 +199,7 @@ export default function About() {
           <Reveal delay={110}>
             <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-muted text-pretty">
               Sessions run for 60 minutes, online via Google Meet or in person
-              at the Ikeja office , whichever lets you speak most freely.
+              at the Ikeja office — whichever lets you speak most freely.
             </p>
           </Reveal>
         </Container>

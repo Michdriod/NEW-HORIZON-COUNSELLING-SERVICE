@@ -44,7 +44,7 @@ export default function Terms() {
               services including marriage counselling, family counselling,
               premarital counselling, faith-based counselling, and online
               counselling. Our services are provided by Gabriel Ajibade, a
-              certified counsellor and mental health therapist.
+              certified counsellor and Mental Health Therapist.
             </p>
 
             <h2>

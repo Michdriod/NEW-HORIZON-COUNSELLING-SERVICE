@@ -25,7 +25,7 @@ const services = [
   {
     title: "Premarital Counselling",
     summary:
-      "Have the honest conversations , money, family, roles, faith , before you say ‘I do’.",
+      "Have the honest conversations — money, family, roles, faith — before you say ‘I do’.",
     for: "Engaged couples",
   },
   {
@@ -45,7 +45,7 @@ const services = [
 const steps = [
   {
     title: "Reach out",
-    body: "Send a message on WhatsApp. Gabriel replies personally , no forms, no waiting rooms.",
+    body: "Send a message on WhatsApp. Gabriel replies personally — no forms, no waiting rooms.",
   },
   {
     title: "A free intro call",
@@ -76,10 +76,10 @@ const faqs = [
 ];
 
 const credentials = [
-  "Certified counsellor & mental health therapist",
+  "Certified counsellor & Mental Health Therapist",
   "Marriage and family life counsellor",
   "Counselling educator and mentor",
-  "Pastor , faith-sensitive where desired",
+  "Pastor — faith-sensitive where desired",
 ];
 
 export default function Home() {
@@ -116,7 +116,7 @@ export default function Home() {
 
               <Reveal delay={180}>
                 <p className="mt-8 max-w-xl text-[length:var(--text-lede)] leading-relaxed text-muted text-pretty">
-                  Counselling for individuals, couples, and families , held with
+                  Counselling for individuals, couples, and families — held with
                   eighteen years of practice, complete confidentiality, and a
                   pace that belongs to you.
                 </p>
@@ -149,8 +149,8 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={340}>
-                <p className="mt-8 text-[0.9rem] text-muted-light">
-                  Free 15-minute intro call · No payment taken on this site
+                <p className="mt-8 text-[0.9rem] font-semibold text-muted">
+                  Free 15-minute intro call
                 </p>
               </Reveal>
             </div>
@@ -162,14 +162,17 @@ export default function Home() {
                 className="animate-drift absolute -right-10 -top-10 h-72 w-72 rounded-full bg-accent-bright/15 blur-[90px]"
               />
               <div className="relative overflow-hidden rounded-[2.5rem] border border-line bg-white shadow-[0_40px_80px_-40px_rgba(12,27,51,0.4)]">
+                {/* Pre-composed portrait crop. The original 16:9 frame put
+                    Gabriel at ~66% across, so a portrait-shaped box could not
+                    centre him without cropping his arm off. */}
                 <Image
-                  src="/gabriel.png"
+                  src="/gabriel-portrait.jpg"
                   alt="Gabriel Ajibade, counsellor at New Horizon Counselling Service"
-                  width={1600}
+                  width={1050}
                   height={900}
                   priority
                   sizes="(max-width: 1024px) 100vw, 46vw"
-                  className="h-[22rem] w-full object-cover object-[center_28%] md:h-[30rem]"
+                  className="h-[22rem] w-full object-cover object-center md:h-[30rem]"
                 />
                 <div className="flex items-center justify-between gap-4 border-t border-line px-7 py-5">
                   <div>
@@ -177,7 +180,7 @@ export default function Home() {
                       Gabriel Ajibade
                     </p>
                     <p className="mt-0.5 text-[0.85rem] text-muted">
-                      Counsellor &amp; mental health therapist
+                      Counsellor &amp; Mental Health Therapist
                     </p>
                   </div>
                   <p className="font-display text-[2.25rem] leading-none text-highlight">
@@ -234,7 +237,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Who we work with"
             title="Individuals, couples, and families."
-            subtitle="Whoever walks in, the work starts the same way , with listening."
+            subtitle="Whoever walks in, the work starts the same way — with listening."
             centered={false}
           />
 
@@ -433,7 +436,7 @@ export default function Home() {
               <Reveal delay={120}>
                 <p className="font-display text-[length:var(--text-h3)] leading-[1.45] text-ink-soft text-pretty">
                   &ldquo;My approach is warm, ethical, practical, and
-                  integrative , drawing on sound counselling principles, and
+                  integrative — drawing on sound counselling principles, and
                   respectfully holding Christian values where a client wants a
                   faith-based process.&rdquo;
                 </p>

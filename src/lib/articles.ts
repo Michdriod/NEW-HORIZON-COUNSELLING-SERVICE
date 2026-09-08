@@ -12,7 +12,7 @@ export interface Article {
 /**
  * Single source of truth for articles, shared by the listing page, the
  * article page, and the home-page teaser. Swap this module for the CMS
- * client when Sanity is wired up , the page components need not change.
+ * client when Sanity is wired up — the page components need not change.
  */
 export const articles: Article[] = [
   {

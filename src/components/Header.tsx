@@ -63,7 +63,7 @@ export default function Header() {
             scrolled ? "h-[4.25rem]" : "h-[5.5rem]"
           }`}
         >
-          <Link href="/" aria-label="New Horizon Counselling Service , home">
+          <Link href="/" aria-label="New Horizon Counselling Service — home">
             <Logo />
           </Link>
 
