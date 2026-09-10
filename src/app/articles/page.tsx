@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
+import { photos } from "@/lib/images";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import { articles } from "@/lib/articles";
@@ -20,6 +21,10 @@ export default function Articles() {
         eyebrow="Reading room"
         title="Articles & resources"
         lede="Insights, advice, and resources to support your mental health and relationship journey."
+        band={{
+          photo: photos.online,
+          objectPosition: "object-[center_35%]",
+        }}
       />
 
       <section className="border-t border-line bg-surface py-16 md:py-24">

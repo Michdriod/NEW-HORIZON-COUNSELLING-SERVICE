@@ -29,7 +29,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className={`group fixed bottom-6 right-5 z-50 flex items-center gap-0 overflow-hidden rounded-full bg-[#1FA855] py-4 pl-4 pr-4 text-white shadow-[0_18px_40px_-16px_rgba(31,168,85,0.9)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#17914A] hover:gap-2.5 hover:pr-6 sm:bottom-8 sm:right-8 ${
+      className={`group fixed bottom-6 right-5 z-50 flex items-center gap-0 overflow-hidden rounded-full bg-[#1FA855] py-4 pl-4 pr-4 text-white shadow-[0_10px_26px_-14px_rgba(31,168,85,0.55)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-[#17914A] hover:gap-2.5 hover:pr-6 sm:bottom-8 sm:right-8 ${
         visible
           ? "animate-halo translate-y-0 opacity-100"
           : "pointer-events-none translate-y-6 opacity-0"

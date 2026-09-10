@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/Container";
+import PhotoBand from "@/components/PhotoBand";
 import { photos } from "@/lib/images";
+import {
+  aboutProfile,
+  aboutCredentials,
+  aboutMemberships,
+  aboutAreas,
+} from "@/lib/content";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
@@ -16,42 +23,6 @@ export const metadata: Metadata = {
     "marriage counsellor Lagos",
   ],
 };
-
-const profile = [
-  "Gabriel Ajibade is a pastor, certified counsellor, Mental Health Therapist, marriage and family life counsellor, mentor, and counselling educator. He brings together pastoral wisdom, professional counselling training, and years of practical experience in supporting individuals, couples, families, leaders, and faith communities.",
-  "He holds a Master’s degree in Theology with specialization in Leadership, a Master’s degree in Mental Health Counselling, and an Advanced Diploma in Marriage Counselling, and has received professional training in family counselling, cognitive behavioural therapy, psychotherapy, marriage counselling, mentoring, and pastoral care. He is also actively involved in counselling education and supervision, helping to train and guide emerging counsellors in ethical and competent practice.",
-  "His professional memberships include the Counselling Association of Nigeria and the Africa Network of Professional Counsellors. He has also served in leadership, academic, supervisory, and mentoring capacities within counselling, ministry, and training institutions.",
-];
-
-const credentials = [
-  "Master’s degree in Theology with specialization in Leadership",
-  "Master’s degree in Mental Health Counselling",
-  "Advanced Diploma in Marriage Counselling",
-  "Professional training in family counselling",
-  "Professional training in cognitive behavioural therapy",
-  "Professional training in psychotherapy",
-  "Professional training in mentoring and pastoral care",
-];
-
-const memberships = [
-  "Counselling Association of Nigeria",
-  "Africa Network of Professional Counsellors",
-];
-
-const areasOfCompetence = [
-  "Marriage and family counselling",
-  "Premarital counselling",
-  "Relationship counselling",
-  "Emotional wellness",
-  "Faith-based counselling",
-  "Mental health support",
-  "Pastoral counselling",
-  "Mentoring",
-  "Personal development",
-  "Trauma-sensitive support",
-  "Parenting guidance",
-  "Leadership development",
-];
 
 function DefinitionList({
   label,
@@ -94,7 +65,7 @@ export default function About() {
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <Reveal direction="scale">
               <div className="lg:sticky lg:top-32">
-                <div className="overflow-hidden rounded-[2.5rem] border border-line shadow-[0_40px_80px_-44px_rgba(12,27,51,0.4)]">
+                <div className="overflow-hidden rounded-[2rem] border border-line bg-surface">
                   <Image
                     src="/gabriel-portrait.jpg"
                     alt="Gabriel Ajibade, counsellor at New Horizon Counselling Service"
@@ -125,7 +96,7 @@ export default function About() {
                 </h2>
               </Reveal>
               <div className="mt-8 space-y-6">
-                {profile.map((para, i) => (
+                {aboutProfile.map((para, i) => (
                   <Reveal key={i} delay={80 + i * 70}>
                     <p className="leading-relaxed text-body text-pretty">
                       {para}
@@ -154,11 +125,11 @@ export default function About() {
         <Container>
           <DefinitionList
             label="Education & credentials"
-            items={credentials}
+            items={aboutCredentials}
           />
           <DefinitionList
             label="Professional memberships"
-            items={memberships}
+            items={aboutMemberships}
           />
 
           <div className="grid gap-6 border-y border-line py-10 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
@@ -167,7 +138,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={80}>
               <ul className="flex flex-wrap gap-2.5">
-                {areasOfCompetence.map((area) => (
+                {aboutAreas.map((area) => (
                   <li
                     key={area}
                     className="rounded-full border border-line-strong bg-surface px-4 py-2 text-[0.9rem] text-body transition-colors duration-300 hover:border-ink/30"
@@ -182,27 +153,12 @@ export default function About() {
       </section>
 
       {/* A glimpse of the work itself, not just the practitioner */}
-      <section className="border-t border-line bg-surface py-16 md:py-20">
-        <Container>
-          <Reveal direction="scale">
-            <figure className="overflow-hidden rounded-[2rem] border border-line md:rounded-[2.5rem]">
-              <Image
-                src={photos.session.src}
-                alt={photos.session.alt}
-                width={photos.session.width}
-                height={photos.session.height}
-                sizes="(max-width: 1024px) 100vw, 80rem"
-                className="h-56 w-full object-cover object-[center_35%] sm:h-72 md:h-[26rem]"
-              />
-            </figure>
-          </Reveal>
-          <Reveal delay={110}>
-            <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-muted text-pretty">
-              Sessions run for 60 minutes, online via Google Meet or in person
-              at the Ikeja office, whichever lets you speak most freely.
-            </p>
-          </Reveal>
-        </Container>
+      <section className="border-t border-line bg-background py-16 md:py-20">
+        <PhotoBand
+          photo={photos.session}
+          objectPosition="object-[center_35%]"
+          caption="Sessions run for 60 minutes, online via Google Meet or in person at the Ikeja office, whichever lets you speak most freely."
+        />
       </section>
 
       <CtaBand

@@ -6,6 +6,7 @@ import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import ContactActions from "@/components/ContactActions";
 import { photos } from "@/lib/images";
+import { services, sessionFacts, slugify } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Our Services | New Horizon Counselling Service",
@@ -22,86 +23,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const services = [
-  {
-    title: "Marriage Counselling",
-    photo: photos.marriage,
-    whoFor:
-      "For couples at any stage of their marriage who want to strengthen their relationship, resolve conflicts, or improve communication.",
-    whatToExpect:
-      "In marriage counselling, you and your partner will work with Gabriel in a safe, non-judgmental space. Sessions focus on improving communication patterns, rebuilding trust, deepening emotional intimacy, and developing practical tools for a healthier relationship. Each session lasts 60 minutes and can be conducted online via Google Meet or in person at our Ikeja office.",
-  },
-  {
-    title: "Family Counselling",
-    photo: photos.family,
-    whoFor:
-      "For families navigating challenges such as communication breakdowns, behavioural issues, grief, transitions, or conflict between family members.",
-    whatToExpect:
-      "Family counselling provides a safe space for all family members to express themselves and be heard. Gabriel helps families identify unhealthy patterns, improve communication, and develop stronger bonds. Sessions are 60 minutes and can be held online or in person, depending on your family’s needs.",
-  },
-  {
-    title: "Premarital Counselling",
-    photo: photos.premarital,
-    whoFor:
-      "For couples preparing for marriage who want to build a strong foundation before saying ‘I do’.",
-    whatToExpect:
-      "Premarital counselling helps couples explore important topics such as expectations, communication styles, finances, family planning, roles, and conflict resolution. Gabriel provides practical tools and honest conversations that prepare you for a successful marriage. Sessions are 60 minutes, available online or in person.",
-  },
-  {
-    title: "Faith-Based Counselling",
-    photo: photos.faith,
-    whoFor:
-      "For individuals, couples, or families who desire a faith-sensitive approach to their mental health and relationship journey.",
-    whatToExpect:
-      "Faith-based counselling integrates professional counselling principles with Christian values and spiritual insights. Gabriel respectfully incorporates faith into the therapeutic process for those who desire it. This approach is available for all services and can be conducted online or in person.",
-  },
-  {
-    title: "Anxiety & Depression Counselling",
-    photo: photos.anxietyDepression,
-    whoFor:
-      "For individuals whose thoughts, emotions, relationships, work, sleep, faith, or daily functioning are being affected by anxiety or depression.",
-    whatToExpect:
-      "Our counselling service provides a safe, confidential, and supportive space where clients can explore what they are experiencing. The goal is to help clients regain emotional stability, improve self-awareness, strengthen resilience, and take practical steps toward recovery. Where symptoms are severe or require medical attention, we also support appropriate referral to qualified healthcare professionals.",
-  },
-  {
-    title: "Addiction Recovery Counselling",
-    photo: photos.addictionRecovery,
-    whoFor:
-      "For individuals seeking freedom from substances, habits, or behaviours that have begun to control their choices, relationships, health, finances, work, or spiritual wellbeing.",
-    whatToExpect:
-      "Our addiction recovery counselling provides structured, compassionate, and non-judgmental support for individuals seeking freedom from harmful patterns. We help clients identify triggers and the roots of addiction, and build relapse-prevention strategies. Where specialist medical, psychiatric, or rehabilitation support is needed, we work with the client to pursue appropriate referral and coordinated care.",
-  },
-  {
-    title: "Online Counselling",
-    photo: photos.online,
-    whoFor:
-      "For individuals, couples, or families who prefer the convenience of remote sessions from their home or any location.",
-    whatToExpect:
-      "Online counselling provides the same quality of professional support as in-person sessions, conducted via secure video conferencing (Google Meet). This option offers flexibility for busy schedules, those with mobility challenges, or anyone who prefers the comfort of their own space. Sessions are 60 minutes.",
-  },
-];
-
-const sessionFacts = [
-  { k: "60 minutes", v: "The length of every session, for every service." },
-  {
-    k: "Online or in person",
-    v: "Secure video via Google Meet, or at the Ikeja office.",
-  },
-  {
-    k: "Free intro call",
-    v: "A complimentary 15-minute discovery call before you commit.",
-  },
-];
-
-/** URL-safe anchor for each service section. */
-function slugify(title: string) {
-  return title
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
 export default function Services() {
   return (
     <>
@@ -109,6 +30,10 @@ export default function Services() {
         eyebrow="What we offer"
         title="Counselling shaped around your situation."
         lede="Seven services, one standard of care. Every session runs 60 minutes and is available online or in person, and each begins with a free introductory call."
+        band={{
+          photo: photos.family,
+          objectPosition: "object-[center_40%]",
+        }}
       />
 
       {/* Session facts */}

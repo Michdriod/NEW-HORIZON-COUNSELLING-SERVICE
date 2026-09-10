@@ -9,10 +9,14 @@
 
 @theme {
   /* --- Type --- */
-  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
-  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-wordmark: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-fraunces), Georgia, serif; /* legacy alias */
+  /* Avenir Next resolves on macOS and iOS where it is installed; Figtree
+     is the free stand-in everywhere else. */
+  --font-display: "Avenir Next", Avenir, var(--font-figtree), ui-sans-serif,
+    system-ui, sans-serif;
+  --font-body: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-wordmark: "Avenir Next", Avenir, var(--font-figtree), ui-sans-serif,
+    sans-serif;
+  --font-heading: "Avenir Next", Avenir, var(--font-figtree), sans-serif;
 
   /* --- Ink --- */
   --color-ink: #0C1B33;
@@ -77,19 +81,22 @@
     font-family: var(--font-body);
     font-size: 1rem;
     line-height: 1.65;
-    letter-spacing: -0.005em;
+    letter-spacing: normal;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--color-ink);
-    font-weight: 500;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    font-variation-settings: "SOFT" 20, "WONK" 0;
+    font-weight: 800;
+    line-height: 1.14;
+    letter-spacing: -0.015em;
   }
 
-  h4, h5, h6 { line-height: 1.25; letter-spacing: -0.01em; }
+  h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
 
   /* Body copy steps up slightly once there is room for it. */
   @media (min-width: 48rem) {
@@ -123,7 +130,7 @@
   font-family: var(--font-body);
   font-size: var(--text-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -131,10 +138,11 @@
 /* Optical refinements for the serif display face */
 @utility display-tight {
   font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: -0.028em;
-  font-variation-settings: "SOFT" 30, "WONK" 1;
+  font-weight: 800;
+  line-height: 1.08;
+  /* 800 sets tighter than 500 did: heavy geometric letterforms leave more
+     apparent space between them, so they need pulling in further. */
+  letter-spacing: -0.03em;
 }
 
 @utility text-balance { text-wrap: balance; }
@@ -251,8 +259,8 @@
 }
 
 .lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px -20px rgba(12, 27, 51, 0.22);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -24px rgba(12, 27, 51, 0.16);
 }
 
 /* Slow ambient drift for decorative bloom shapes */
@@ -327,7 +335,7 @@
 ::-webkit-scrollbar-thumb:hover { background: var(--color-muted-light); }
 
 /* Long-form article typography */
-.prose-nh { max-width: 68ch; }
+.prose-nh { max-width: 60ch; }
 
 /* Standfirst: lift the opening paragraph so the article has an entry point. */
 .prose-nh--lede > p:first-child {

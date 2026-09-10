@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        /* Internal design-review route, not part of the public site. */
+        disallow: ["/hero-lab", "/design-lab"],
       },
     ],
     sitemap: "https://newhorizonng.com/sitemap.xml",

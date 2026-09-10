@@ -91,6 +91,33 @@ export default function Footer() {
               Guiding you to a Brighter Tomorrow. Professional counselling for
               individuals, couples, and families in Lagos, Nigeria.
             </p>
+
+            <h2 className="eyebrow mb-4 mt-9 text-white/45">Opening hours</h2>
+            <dl className="max-w-xs text-[0.9rem] text-white/60">
+              {[
+                ["Monday to Friday", "9:00 AM – 5:00 PM"],
+                ["Saturday", "By appointment"],
+                ["Sunday", "Closed"],
+              ].map(([day, time]) => (
+                <div
+                  key={day}
+                  className="flex items-baseline justify-between gap-6 border-b border-white/10 py-2.5"
+                >
+                  <dt>{day}</dt>
+                  <dd className="text-white/45">{time}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <a
+              href="https://wa.me/2348034522900"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex items-center gap-2.5 rounded-full border border-white/20 px-5 py-2.5 text-[0.875rem] font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              Book a session
+            </a>
           </div>
 
           <nav aria-label="Footer">
@@ -193,14 +220,13 @@ export default function Footer() {
         </div>
 
         {/* Crisis disclaimer */}
-        <div className="rounded-[1.5rem] border border-highlight/25 bg-highlight/[0.07] p-6">
-          <p className="text-[0.9rem] leading-relaxed text-white/75">
+        <div className="rounded-[1.5rem] border border-highlight/25 bg-highlight/[0.07] px-6 py-5">
+          <p className="text-[0.9rem] leading-relaxed text-white/75 text-balance">
             <strong className="font-semibold text-highlight-soft">
               Crisis disclaimer:
             </strong>{" "}
-            New Horizon Counselling Service is not an emergency service. If you
-            are in crisis or danger, contact a local emergency number or
-            hospital immediately.
+            This is not an emergency service. If you are in crisis or danger,
+            contact a local emergency number or hospital immediately.
           </p>
         </div>
 

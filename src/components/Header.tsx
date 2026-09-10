@@ -53,7 +53,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-500 ${
         scrolled || menuOpen
-          ? "border-b border-line bg-background/88 shadow-[0_1px_24px_-14px_rgba(12,27,51,0.45)] backdrop-blur-xl"
+          ? "border-b border-line bg-background/88 shadow-[0_1px_16px_-14px_rgba(12,27,51,0.3)] backdrop-blur-xl"
           : "border-b border-transparent bg-background"
       }`}
     >
@@ -76,10 +76,10 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-300 ${
+                  className={`relative rounded-full px-4 py-2 text-[0.9rem] transition-colors duration-300 ${
                     active
-                      ? "text-ink"
-                      : "text-muted hover:text-ink"
+                      ? "font-semibold text-ink"
+                      : "font-medium text-muted hover:text-ink"
                   }`}
                 >
                   {item.name}
@@ -96,7 +96,7 @@ export default function Header() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-4 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[0.875rem] font-semibold text-white transition-all duration-300 hover:bg-primary hover:shadow-[0_12px_28px_-12px_rgba(10,53,144,0.7)] active:scale-[0.98]"
+              className="ml-4 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[0.875rem] font-semibold text-white transition-all duration-300 hover:bg-primary hover:shadow-[0_10px_22px_-14px_rgba(10,53,144,0.4)] active:scale-[0.98]"
             >
               Book a Session
               <svg

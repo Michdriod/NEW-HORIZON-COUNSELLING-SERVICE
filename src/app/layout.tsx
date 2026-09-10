@@ -1,33 +1,31 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Poppins } from "next/font/google";
+import { Montserrat, Figtree } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-/* Display: a warm, low-contrast serif. Reads considered and mature in a
-   way the previous geometric sans could not, without turning cold. */
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+/* Body, navigation, buttons and labels. */
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  display: "swap",
-  axes: ["SOFT", "WONK", "opsz"],
-});
-
-/* Body & UI: neutral, highly legible at small sizes. */
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-/* Reserved for the wordmark, which matches the geometric sans in the logo. */
-const poppins = Poppins({
-  variable: "--font-poppins",
+/* Heading fallback.
+   The brief specifies Avenir Next, which is a licensed Monotype face: it is
+   installed on macOS and iOS but not on Android or Windows, and cannot be
+   self-hosted without a paid web licence. The heading stack therefore asks
+   for Avenir Next first and falls back to Figtree — the closest free
+   geometric-humanist face — so visitors on Android see a near match rather
+   than an arbitrary system font. */
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
   display: "swap",
-  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -128,7 +126,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
          hydration, so its class list intentionally differs from the
          server-rendered one. */
       suppressHydrationWarning
-      className={`${fraunces.variable} ${inter.variable} ${poppins.variable} h-full`}
+      className={`${montserrat.variable} ${figtree.variable} h-full`}
     >
       <head>
         {/* Opt in to scroll-reveal motion only when scripting is available

@@ -1,30 +1,44 @@
 import { type ReactNode } from "react";
 import Container from "./Container";
 import Reveal from "./Reveal";
+import PhotoBand from "./PhotoBand";
+import type { Photo } from "@/lib/images";
 
 interface PageHeroProps {
   eyebrow?: string;
   title: ReactNode;
   lede?: string;
   children?: ReactNode;
+  /**
+   * A full-bleed photographic band closing the hero, matching the home
+   * page's opening. Pages that are purely textual (privacy, terms) leave
+   * this off.
+   */
+  band?: {
+    photo: Photo;
+    objectPosition?: string;
+    caption?: string;
+  };
 }
 
 /**
- * Consistent opening for every interior page: left-aligned, generous
- * top space, and a hairline horizon rule that echoes the logo mark.
+ * Consistent opening for every interior page: left-aligned, generous top
+ * space, and — where the page has a photograph worth showing — the same
+ * full-bleed band the home page opens with, so the two read as one site.
  */
 export default function PageHero({
   eyebrow,
   title,
   lede,
   children,
+  band,
 }: PageHeroProps) {
   return (
-    <section className="field-sand relative overflow-hidden pb-16 pt-14 md:pb-24 md:pt-20">
-      <div
-        aria-hidden="true"
-        className="animate-drift pointer-events-none absolute -right-32 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-bright/10 blur-[120px]"
-      />
+    <section
+      className={`field-sand relative overflow-hidden pt-14 md:pt-20 ${
+        band ? "" : "pb-16 md:pb-24"
+      }`}
+    >
       <Container className="relative">
         <div className="max-w-3xl">
           {eyebrow && (
@@ -50,6 +64,17 @@ export default function PageHero({
           {children && <Reveal delay={250}>{children}</Reveal>}
         </div>
       </Container>
+
+      {band && (
+        <PhotoBand
+          photo={band.photo}
+          objectPosition={band.objectPosition}
+          caption={band.caption}
+          height="md"
+          priority
+          className="mt-12 md:mt-16"
+        />
+      )}
     </section>
   );
 }

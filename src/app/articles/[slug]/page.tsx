@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
+import PhotoBand from "@/components/PhotoBand";
 import CtaBand from "@/components/CtaBand";
 import Reveal from "@/components/Reveal";
 import { articles } from "@/lib/articles";
@@ -41,7 +42,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <>
-      <section className="field-sand relative overflow-hidden pb-14 pt-14 md:pb-20 md:pt-20">
+      <section className="field-sand relative overflow-hidden pt-14 md:pt-20">
         <div
           aria-hidden="true"
           className="animate-drift pointer-events-none absolute -right-32 -top-40 h-[28rem] w-[28rem] rounded-full bg-accent-bright/10 blur-[120px]"
@@ -80,20 +81,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </h1>
           </Reveal>
 
-          <Reveal direction="scale" delay={210}>
-            <div className="mt-12 overflow-hidden rounded-[2rem] border border-line md:rounded-[2.5rem]">
-              <Image
-                src={article.cover.src}
-                alt={article.cover.alt}
-                width={article.cover.width}
-                height={article.cover.height}
-                priority
-                sizes="(max-width: 1024px) 100vw, 80rem"
-                className="h-56 w-full object-cover sm:h-72 md:h-[26rem]"
-              />
-            </div>
-          </Reveal>
         </Container>
+
+        <PhotoBand
+          photo={article.cover}
+          priority
+          className="mt-12 md:mt-16"
+        />
       </section>
 
       <article className="border-t border-line bg-surface py-16 md:py-24">

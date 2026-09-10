@@ -38,8 +38,8 @@ export default function ContactActions({
   const onDark = tone === "onDark";
 
   const primary = onDark
-    ? "bg-white text-ink hover:bg-highlight hover:text-white shadow-[0_16px_38px_-18px_rgba(0,0,0,0.85)]"
-    : "bg-ink text-white shadow-[0_14px_30px_-16px_rgba(12,27,51,0.9)] hover:bg-primary hover:shadow-[0_20px_42px_-16px_rgba(10,53,144,0.75)]";
+    ? "bg-white text-ink hover:bg-highlight hover:text-white shadow-[0_10px_26px_-18px_rgba(0,0,0,0.5)]"
+    : "bg-ink text-white shadow-[0_8px_20px_-14px_rgba(12,27,51,0.5)] hover:bg-primary hover:shadow-[0_12px_26px_-14px_rgba(10,53,144,0.4)]";
 
   const secondary = onDark
     ? "border border-white/25 text-white hover:border-white hover:bg-white/10"

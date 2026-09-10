@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
+import { photos } from "@/lib/images";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
@@ -102,6 +103,10 @@ export default function Contact() {
         eyebrow="Contact"
         title="We’re here when you’re ready."
         lede="Reach out via WhatsApp, phone, or visit the office in Ikeja, Lagos. Gabriel replies personally."
+        band={{
+          photo: photos.premarital,
+          objectPosition: "object-[center_40%]",
+        }}
       />
 
       {/* Channels */}

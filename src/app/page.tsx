@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
+import HomeHero from "@/components/HomeHero";
 import SectionHeading from "@/components/SectionHeading";
 import ContactActions from "@/components/ContactActions";
 import Reveal from "@/components/Reveal";
@@ -8,7 +9,6 @@ import Accordion from "@/components/Accordion";
 import CtaBand from "@/components/CtaBand";
 import { articles } from "@/lib/articles";
 import { photos } from "@/lib/images";
-import { site } from "@/lib/site";
 
 const services = [
   {
@@ -98,123 +98,7 @@ const credentials = [
 export default function Home() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="field-sand relative overflow-hidden pb-24 pt-16 md:pb-32 md:pt-24">
-        <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            <div>
-              <Reveal>
-                <p className="eyebrow mb-7 flex items-center gap-3 text-highlight-text">
-                  <span className="h-px w-8 bg-current opacity-60" />
-                  Lagos, Nigeria · Since 1998
-                </p>
-              </Reveal>
-
-              <Reveal delay={90}>
-                <h1 className="display-tight text-[length:var(--text-display)] text-ink">
-                  Guiding you to a{" "}
-                  <span className="relative whitespace-nowrap">
-                    <span className="relative z-10 italic text-primary">
-                      brighter
-                    </span>
-                    {/* Nudged right to sit under the italic’s overhang. */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute -bottom-[0.02em] left-[0.04em] right-[-0.06em] z-0 h-[0.16em] rounded-full bg-highlight/30"
-                    />
-                  </span>{" "}
-                  tomorrow.
-                </h1>
-              </Reveal>
-
-              <Reveal delay={180}>
-                <p className="mt-8 max-w-xl text-[length:var(--text-lede)] leading-relaxed text-muted text-pretty">
-                  Counselling for individuals, couples, and families. Held with
-                  twenty-eight years of practice, complete confidentiality, and a
-                  pace that belongs to you.
-                </p>
-              </Reveal>
-
-              <Reveal delay={260}>
-                <ContactActions size="lg" whatsappLabel="Book a session" className="mt-10" />
-              </Reveal>
-
-              <Reveal delay={300}>
-                <p className="mt-5 text-[0.9rem] font-semibold text-muted">
-                  Free 15-minute intro call
-                </p>
-              </Reveal>
-
-              <Reveal delay={340}>
-                <Link
-                  href="/services"
-                  className="link-underline mt-8 inline-flex py-2 text-[0.95rem] font-semibold text-primary"
-                >
-                  Explore our services
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 12h13m0 0-5-5m5 5-5 5"
-                    />
-                  </svg>
-                </Link>
-              </Reveal>
-
-            </div>
-
-            {/* Portrait */}
-            <Reveal direction="scale" delay={200} className="relative">
-              <div
-                aria-hidden="true"
-                className="animate-drift absolute -right-10 -top-10 h-72 w-72 rounded-full bg-accent-bright/15 blur-[90px]"
-              />
-              <div className="relative overflow-hidden rounded-[2.5rem] border border-line bg-white shadow-[0_40px_80px_-40px_rgba(12,27,51,0.4)]">
-                {/* Pre-composed portrait crop. The original 16:9 frame put
-                    Gabriel at ~66% across, so a portrait-shaped box could not
-                    centre him without cropping his arm off. */}
-                <Image
-                  src="/gabriel-portrait.jpg"
-                  alt="Gabriel Ajibade, counsellor at New Horizon Counselling Service"
-                  width={1050}
-                  height={900}
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 46vw"
-                  className="h-[22rem] w-full object-cover object-center md:h-[30rem]"
-                />
-                <div className="flex items-center justify-between gap-4 border-t border-line px-7 py-5">
-                  <div>
-                    <p className="font-display text-[1.2rem] text-ink">
-                      Gabriel Ajibade
-                    </p>
-                    <p className="mt-0.5 text-[0.85rem] text-muted">
-                      Counsellor &amp; Mental Health Therapist
-                    </p>
-                  </div>
-                  <div className="shrink-0 text-right">
-                    <p className="font-display text-[2.25rem] leading-none text-highlight">
-                      {site.yearsOfExperience}
-                    </p>
-                    {/* Tighter on phones so it does not squeeze the role
-                        beside it onto three lines. */}
-                    <p className="mt-1.5 font-body text-[0.55rem] font-semibold uppercase leading-tight tracking-[0.08em] text-muted sm:text-[0.62rem] sm:tracking-[0.14em]">
-                      Years of
-                      <br className="sm:hidden" /> practice
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
+      <HomeHero />
 
       {/* ── Assurances strip ─────────────────────────────────── */}
       <section className="border-y border-line bg-surface">
@@ -268,25 +152,24 @@ export default function Home() {
               { photo: photos.families, label: "Families", note: "Untangling the patterns you’re all caught in." },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 110}>
-                <figure className="group relative overflow-hidden rounded-[1.75rem]">
-                  <Image
-                    src={item.photo.src}
-                    alt={item.photo.alt}
-                    width={item.photo.width}
-                    height={item.photo.height}
-                    sizes="(max-width: 640px) 100vw, 30vw"
-                    className="h-72 w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05] md:h-[26rem]"
-                  />
-                  {/* Scrim so the caption stays legible over any frame. */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                    <p className="font-display text-[1.35rem] text-white">
+                <figure className="group">
+                  <div className="overflow-hidden rounded-[1.75rem]">
+                    <Image
+                      src={item.photo.src}
+                      alt={item.photo.alt}
+                      width={item.photo.width}
+                      height={item.photo.height}
+                      sizes="(max-width: 640px) 100vw, 30vw"
+                      className="h-72 w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05] md:h-[24rem]"
+                    />
+                  </div>
+                  {/* The caption sits on the ivory beneath the frame rather
+                      than over the photograph, so it needs no scrim. */}
+                  <figcaption className="mt-5 border-t border-line-strong pt-4">
+                    <p className="font-display text-[1.2rem] text-ink">
                       {item.label}
                     </p>
-                    <p className="mt-1.5 text-[0.9rem] leading-relaxed text-white/75">
+                    <p className="mt-1.5 text-[0.9rem] leading-relaxed text-muted">
                       {item.note}
                     </p>
                   </figcaption>
@@ -320,7 +203,7 @@ export default function Home() {
 
                   <h3 className="font-display text-[1.4rem] leading-tight text-ink transition-colors duration-400 group-hover:text-primary md:text-[1.75rem]">
                     {service.title}
-                    <span className="mt-1.5 block font-body text-[0.75rem] font-semibold uppercase tracking-[0.14em] text-muted-light">
+                    <span className="mt-1.5 block font-body text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-muted-light">
                       {service.for}
                     </span>
                   </h3>
@@ -389,18 +272,6 @@ export default function Home() {
             ))}
           </ol>
 
-          <Reveal direction="scale" delay={200}>
-            <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-white/10">
-              <Image
-                src={photos.session.src}
-                alt={photos.session.alt}
-                width={photos.session.width}
-                height={photos.session.height}
-                sizes="(max-width: 1024px) 100vw, 72rem"
-                className="h-56 w-full object-cover object-[center_35%] sm:h-72 md:h-[22rem]"
-              />
-            </div>
-          </Reveal>
 
           <Reveal delay={340}>
             <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
