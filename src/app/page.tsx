@@ -8,6 +8,7 @@ import Accordion from "@/components/Accordion";
 import CtaBand from "@/components/CtaBand";
 import { articles } from "@/lib/articles";
 import { photos } from "@/lib/images";
+import { site } from "@/lib/site";
 
 const services = [
   {
@@ -197,12 +198,17 @@ export default function Home() {
                       Counsellor &amp; Mental Health Therapist
                     </p>
                   </div>
-                  <p className="font-display text-[2.25rem] leading-none text-highlight">
-                    28
-                    <span className="ml-1 align-super font-body text-[0.7rem] font-semibold uppercase tracking-widest text-muted">
-                      yrs
-                    </span>
-                  </p>
+                  <div className="shrink-0 text-right">
+                    <p className="font-display text-[2.25rem] leading-none text-highlight">
+                      {site.yearsOfExperience}
+                    </p>
+                    {/* Tighter on phones so it does not squeeze the role
+                        beside it onto three lines. */}
+                    <p className="mt-1.5 font-body text-[0.55rem] font-semibold uppercase leading-tight tracking-[0.08em] text-muted sm:text-[0.62rem] sm:tracking-[0.14em]">
+                      Years of
+                      <br className="sm:hidden" /> practice
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>
