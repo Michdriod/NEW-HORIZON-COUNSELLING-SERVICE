@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import HomeHero from "@/components/HomeHero";
+import { YearsMark } from "@/components/HeroParts";
 import SectionHeading from "@/components/SectionHeading";
 import ContactActions from "@/components/ContactActions";
 import Reveal from "@/components/Reveal";
@@ -320,6 +321,17 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+              </Reveal>
+
+              {/* The years marker lives here now rather than in the hero —
+                  it belongs beside the credentials it summarises. */}
+              <Reveal delay={240}>
+                <div className="mt-10 flex items-end gap-6 border-t border-line-strong pt-8">
+                  <YearsMark size="lg" align="left" />
+                  <p className="max-w-[16rem] pb-2 text-[0.9rem] leading-relaxed text-muted">
+                    Walking with individuals, couples and families since 1998.
+                  </p>
+                </div>
               </Reveal>
             </div>
 
